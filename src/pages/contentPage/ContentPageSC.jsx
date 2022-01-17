@@ -1,5 +1,7 @@
 import styled from "styled-components/macro";
 import { CUSTOMS } from "../../globals/GlobalStyles";
+import { motion } from "framer-motion";
+
 
 export const ContentContainer = styled.div`
   width: 100%;
@@ -27,6 +29,24 @@ export const TitleSection = styled.div`
   }
 `;
 
+export const SliderArrow = styled.div`
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #080808;
+  ${CUSTOMS.customCenter}
+  margin-right: 10px;
+  margin-left: 10px;
+  transition: all 400ms ease-out;
+  & > .fas {
+    color: #ffff;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+
+`;
+
 export const GamesSection = styled.div`
   width: 100%;
   height: 150px;
@@ -37,12 +57,13 @@ export const GamesSection = styled.div`
 export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
+  position: relative;
   background: white;
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 5px;
   ${CUSTOMS.customCenter}
-  justify-content: flex-start;
+  //justify-content: flex-start;
 `;
 export const GamesTitle = styled.div`
   width: 100%;
@@ -68,15 +89,17 @@ export const ArrowSection = styled.div`
   transform: ${({ starting }) => !starting && "rotate(180)"};
 `;
 
-export const BeginBox = styled.div`
+export const BeginBox = styled(motion.div)`
   height: 90%;
-  width: 10%;
+  width: 12%;
   border: 2px solid black;
   margin-left: 10px;
   border-radius: 4px;
   ${CUSTOMS.customCenter}
   background: #e2e0e0;
   flex-direction: column;
+  overflow: hidden;
+  transition: all 340ms ease-out;
   & > .player--div {
     width: 95%;
     height: 28px;
@@ -100,7 +123,7 @@ export const BeginBox = styled.div`
 `;
 
 
-export const EndBox = styled.div`
+export const EndBox = styled(motion.div)`
   height: 90%;
   width: 24%;
   border: 2px solid black;

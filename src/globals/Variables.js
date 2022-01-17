@@ -12,7 +12,7 @@ export const ENDPOINTS = {
 
 export const GET_ICON = {
     'ROCK' : Rock,
-    'SCISSOR': Scissors,
+    'SCISSORS': Scissors,
     'PAPER':  Paper
 }
 
