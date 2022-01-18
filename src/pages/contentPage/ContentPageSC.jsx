@@ -7,6 +7,8 @@ export const ContentContainer = styled.div`
   width: 100%;
   height: calc(100vh - 140px);
   min-height: 670px;
+  ${CUSTOMS.customCenter}
+  flex-direction: column;
 `;
 
 export const TitleSection = styled.div`
@@ -42,7 +44,7 @@ export const SliderArrow = styled.div`
     color: #ffff;
   }
   &:hover {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 
 `;
@@ -51,6 +53,7 @@ export const GamesSection = styled.div`
   width: 100%;
   height: 150px;
   margin-top: 20px;
+  margin-bottom: 20px;
   ${CUSTOMS.customCenter}
 `;
 
@@ -125,7 +128,7 @@ export const BeginBox = styled(motion.div)`
 
 export const EndBox = styled(motion.div)`
   height: 90%;
-  width: 24%;
+  width: 290px;
   border: 2px solid black;
   margin-left: 10px;
   border-radius: 4px;
