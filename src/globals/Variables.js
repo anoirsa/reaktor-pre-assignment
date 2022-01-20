@@ -5,7 +5,7 @@ import Paper from '../images/svgicons/paper.svg'
 
 
 export const ENDPOINTS = {
-    SOCKET_API:"ws://bad-api-assignment.reaktor.com/rps/live",
+    SOCKET_API:"wss://bad-api-assignment.reaktor.com/rps/live",
     REST_API:"/bad-api-assignment.reaktor.com/rps/history",
 }
 
