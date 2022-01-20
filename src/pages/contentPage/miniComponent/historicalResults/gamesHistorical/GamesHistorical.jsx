@@ -32,7 +32,7 @@ const GamesHistorical = ({ historicalGames }) => {
         if (index >= min && index <= max)
           return (
             <RowData key={index}>
-              <CellData myWidth="24%">{row.gameId}</CellData>
+              <CellData myWidth="24%"><p className="id--game">{row.gameId}</p></CellData>
               <CellData myWidth="22%">
                 <p>{row.playerA.name}</p>
               </CellData>

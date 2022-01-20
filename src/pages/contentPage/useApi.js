@@ -32,7 +32,6 @@ const useApi = () => {
       } else {
         setStartingGames((current) => [...current, currentGame]);
       }
-      console.log(endingGames);
       setCount((current) => current + 1);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -42,7 +41,7 @@ const useApi = () => {
     hResultsClient.get(REST_API).then((res) => {
       const newUpdatedData = res.data.data;
       setHistoricalResults(newUpdatedData);
-      if (endingGames.length > 2) {
+      if (endingGames.length > 3) {
         for (let i in endingGames) {
           const gameExists = _.find(
             newUpdatedData,
@@ -57,7 +56,7 @@ const useApi = () => {
         }
       }
     });
-    if (endingGames.length >= 4) setEndingGames(deleteLeaveJustOne(endingGames));
+    if (endingGames.length >= 5) setEndingGames(deleteLeaveJustOne(endingGames));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [endingGames]);

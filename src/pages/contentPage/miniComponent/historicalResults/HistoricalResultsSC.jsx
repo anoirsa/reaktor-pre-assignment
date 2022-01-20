@@ -48,7 +48,7 @@ export const ButtonSection = styled.div`
   width: 100%;
   ${CUSTOMS.customCenter}
   margin-top: 15px;
-  gap: 20px;
+  gap: 30px;
 `;
 
 export const RowsSection = styled.div`
@@ -89,6 +89,9 @@ export const CellData = styled.div`
     margin-right: 6px;
     margin-left: 6px;
     font-size: 14px;
+  }
+  & > .id--game {
+      font-size:12px;
   }
 `;
 

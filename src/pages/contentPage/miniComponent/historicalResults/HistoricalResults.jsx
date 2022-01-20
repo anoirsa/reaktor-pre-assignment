@@ -11,7 +11,7 @@ import {
 import PlayerHistorical from "./playerHistorical/PlayerHistorical";
 
 const HistoricalResults = ({ historicalGames, setShowModal }) => {
-  const [gameHistorical, setGameHistorical] = useState(false);
+  const [gameHistorical, setGameHistorical] = useState(true);
   return (
     <ModalContainer>
       <ModalWrapper>
@@ -22,12 +22,14 @@ const HistoricalResults = ({ historicalGames, setShowModal }) => {
           />
           <ButtonSection>
             <Button
+              gameHistorical={gameHistorical}
               whiteBackground={true}
               onClick={() => setGameHistorical(true)}
             >
               BY GAME
             </Button>
             <Button
+              gameHistorical={!gameHistorical}
               whiteBackground={true}
               onClick={() => setGameHistorical(false)}
             >

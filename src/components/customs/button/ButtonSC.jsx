@@ -12,6 +12,7 @@ export const ButtonContainer = styled.button`
   padding: 10px 40px;
   color: ${({whiteBackground}) => whiteBackground ? 'white' : 'black'};
   background: ${({whiteBackground}) => whiteBackground ? 'black' : 'white'}; 
+  transform: ${({gameHistorical}) => gameHistorical && 'scale(1.2)'} ;
   &:hover {
     opacity: 0.8;
     transform: scale(1.2);
