@@ -10,10 +10,11 @@ export const ButtonContainer = styled.button`
   transition: all 300ms ease-out;
   font-size: 0.8rem;
   padding: 10px 40px;
-  color: black;
-  background: #ffff;
+  color: ${({whiteBackground}) => whiteBackground ? 'white' : 'black'};
+  background: ${({whiteBackground}) => whiteBackground ? 'black' : 'white'}; 
   &:hover {
     opacity: 0.8;
     transform: scale(1.2);
   }  
 `;
+

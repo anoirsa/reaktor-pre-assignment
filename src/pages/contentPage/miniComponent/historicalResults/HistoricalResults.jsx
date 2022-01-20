@@ -1,12 +1,50 @@
-import React from 'react'
-import { ModalContainer } from './HistoricalResultsSC'
+import React, { useState } from "react";
+import Button from "../../../../components/customs/button/Button";
+import GamesHistorical from "./gamesHistorical/GamesHistorical";
+import {
+  ModalContainer,
+  ModalWrapper,
+  BoxTable,
+  ButtonSection,
+  RowsSection,
+} from "./HistoricalResultsSC";
+import PlayerHistorical from "./playerHistorical/PlayerHistorical";
 
-const HistoricalResults = () => {
-    return (
-        <ModalContainer>
-            
-        </ModalContainer>
-    )
-}
+const HistoricalResults = ({ historicalGames, setShowModal }) => {
+  const [gameHistorical, setGameHistorical] = useState(false);
+  return (
+    <ModalContainer>
+      <ModalWrapper>
+        <BoxTable>
+          <i
+            className="icon fas fa-times"
+            onClick={() => setShowModal(false)}
+          />
+          <ButtonSection>
+            <Button
+              whiteBackground={true}
+              onClick={() => setGameHistorical(true)}
+            >
+              BY GAME
+            </Button>
+            <Button
+              whiteBackground={true}
+              onClick={() => setGameHistorical(false)}
+            >
+              BY PLAYER
+            </Button>
+          </ButtonSection>
+          <RowsSection>
+            {gameHistorical ? (
+              <GamesHistorical historicalGames={historicalGames} />
+            ) : (
+              <PlayerHistorical historicalGames={historicalGames} />
+            )}
+          </RowsSection>
+        </BoxTable>
+      </ModalWrapper>
+    </ModalContainer>
+  );
+};
 
-export default HistoricalResults
+export default HistoricalResults;

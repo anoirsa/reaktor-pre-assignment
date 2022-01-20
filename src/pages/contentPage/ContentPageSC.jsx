@@ -6,9 +6,10 @@ import { motion } from "framer-motion";
 export const ContentContainer = styled.div`
   width: 100%;
   height: calc(100vh - 140px);
-  min-height: 670px;
+  min-height: 660px;
   ${CUSTOMS.customCenter}
   flex-direction: column;
+
 `;
 
 export const TitleSection = styled.div`
@@ -31,23 +32,7 @@ export const TitleSection = styled.div`
   }
 `;
 
-export const SliderArrow = styled.div`
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  background: #080808;
-  ${CUSTOMS.customCenter}
-  margin-right: 10px;
-  margin-left: 10px;
-  transition: all 400ms ease-out;
-  & > .fas {
-    color: #ffff;
-  }
-  &:hover {
-    opacity: 0.6;
-  }
 
-`;
 
 export const GamesSection = styled.div`
   width: 100%;
@@ -164,3 +149,21 @@ export const PlayedIcon = styled.img`
     height: 28px;
     margin-left: 5px;
 `
+
+export const SliderArrow = styled.div`
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #080808;
+  ${CUSTOMS.customCenter}
+  margin-right: 10px;
+  margin-left: 10px;
+  transition: all 400ms ease-out;
+  & > .fas {
+    color: #ffff;
+  }
+  &:hover {
+    opacity: 0.6;
+  }
+
+`;

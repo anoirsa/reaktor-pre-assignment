@@ -6,7 +6,6 @@ export const AppParentContainer = styled.div`
   min-width: 1150px;
   min-height: 800px;
   background: #000000;
-  overflow: hidden;
 
 `;
 

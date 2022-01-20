@@ -3,6 +3,7 @@ import { w3cwebsocket as W3CWebSocket } from "websocket";
 import _ from "lodash";
 import hResultsClient from "./clinetApi";
 import { ENDPOINTS } from "../../globals/Variables";
+import { deleteLeaveJustOne } from "../../globals/Functions";
 
 const { SOCKET_API, REST_API } = ENDPOINTS;
 const webSocketClient = new W3CWebSocket(SOCKET_API);
@@ -31,7 +32,7 @@ const useApi = () => {
       } else {
         setStartingGames((current) => [...current, currentGame]);
       }
-      console.log(endingGames)
+      console.log(endingGames);
       setCount((current) => current + 1);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -41,20 +42,22 @@ const useApi = () => {
     hResultsClient.get(REST_API).then((res) => {
       const newUpdatedData = res.data.data;
       setHistoricalResults(newUpdatedData);
-      if (endingGames.length > 3) {
-      for (let i in endingGames) {
-        const gameExists = _.find(
-          newUpdatedData,
-          (g) => g.gameId === endingGames[i].gameId
-        );
-        if (gameExists) {
-          setEndingGames((current) =>
-            _.filter(current, (g) => g.gameId !== gameExists.gameId)
+      if (endingGames.length > 2) {
+        for (let i in endingGames) {
+          const gameExists = _.find(
+            newUpdatedData,
+            (g) => g.gameId === endingGames[i].gameId
           );
-          break;
+          if (gameExists) {
+            setEndingGames((current) =>
+              _.filter(current, (g) => g.gameId !== gameExists.gameId)
+            );
+            break;
+          }
         }
-      } }
+      }
     });
+    if (endingGames.length >= 4) setEndingGames(deleteLeaveJustOne(endingGames));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [endingGames]);

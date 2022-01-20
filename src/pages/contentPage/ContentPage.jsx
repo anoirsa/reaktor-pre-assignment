@@ -13,7 +13,6 @@ import {
   SliderArrow,
 } from "./ContentPageSC.jsx";
 import useApi from "./useApi.js";
-import { motion } from "framer-motion";
 import ArrowRight from "../../images/svgicons/rightArrow.svg";
 import { GET_ICON } from "../../globals/Variables.js";
 import { defineWinner } from "./miniComponent/TieWin.jsx";
@@ -22,8 +21,10 @@ import HistoricalResults from "./miniComponent/historicalResults/HistoricalResul
 
 
 const ContentPage = () => {
-  const { endingGames, startingGames } = useApi();
+  const { endingGames, startingGames, historicalResults} = useApi();
   const [minMaxShow, setMinMaxShow] = useState({ minShow: 0, maxShow: 4 });
+  const [showModal, setShowModal] = useState(false);
+
 
   const handleSlider = (direction) => {
     if (direction === "right")
@@ -131,10 +132,14 @@ const ContentPage = () => {
           })}
         </Wrapper>
       </GamesSection>
-      <Button>
+      <Button
+        onClick={() => setShowModal(true)}
+      >
         VIEW HISTORICAL RESULTS
       </Button>
-      <HistoricalResults />
+      {showModal && 
+      <HistoricalResults historicalGames={historicalResults} setShowModal={setShowModal}/>
+       }
     </ContentContainer>
   );
 };

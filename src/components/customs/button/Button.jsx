@@ -3,9 +3,12 @@
 import React from 'react'
 import { ButtonContainer } from './ButtonSC'
 
-const Button = ({children}) => {
+const Button = ({children, whiteBackground = false, onClick}) => {
     return (
-        <ButtonContainer>
+        <ButtonContainer 
+            onClick={onClick}
+            whiteBackground={whiteBackground}
+        >
             {children}
         </ButtonContainer>
     )
