@@ -1,5 +1,5 @@
 # 1. Project's Title
-Reaktor game update user interface application, watch video of demonstration through this link 
+Reaktor game update user interface application, watch video of demonstration through this [link](https://drive.google.com/file/d/1CIRUzkQykX0Qf9QtsnJ6uoAmuGDUEO_N/view?usp=sharing)
 
 # 2. Project Description
 A web application in which you could view data about matches of the famous game ("Rock" , "Paper", "Sicssors") fetched from Web socket API + Rest API and display them in  a beatiful fromat and data is always updated
@@ -20,7 +20,6 @@ A web application in which you could view data about matches of the famous game 
  Running the project:
 - Download the ZIP folder of the project from this Github repository  
 - Go to the directory of the project through CMD or terminal then run the command ``` npm install ```
-- Run the command ``` npm test ``` 
 - Run the command ``` npm start ``` and you will be able to browse the project on the default port 3000 (http://localhost:3000)
 
 # 4. How to use the project
@@ -36,7 +35,7 @@ This proejct is simple, you just view the starting games and the ending games th
 * <b>Fetch:</b> axios is much better and faster than fetch and a lot of developers started switching to axios.
 
 # 7. Challenges and Problems:
-The main challenge and problem is when it came to the testing as unfortunately I don't have much experience when when it comes to testing in React frontend. I will soon start taking online courses and tutorials about this. However I have made some basic testing files you just run with command ``` npm test ``` 
+The main challenge and problem is when it came to the testing as unfortunately I don't have much experience when when it comes to testing in React frontend. I will soon start taking online courses and tutorials about this.
 
 # 8. License and Credits:
 This project has been fully developed Anouar Belila, A junior software developer from Vaasa university of applied sciences.
